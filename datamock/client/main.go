@@ -5,14 +5,14 @@ import (
 	"log"
 	"net/http"
 
-	proto "RPC/proto"
+	proto "RPC/datamock/proto"
 
 	"github.com/gin-gonic/gin"
 	"google.golang.org/grpc"
 )
 
 func main() {
-	conn, err := grpc.Dial("localhost:9000", grpc.WithInsecure())
+	conn, err := grpc.Dial("localhost:10000", grpc.WithInsecure())
 	if err != nil {
 		panic(err)
 	}
@@ -24,7 +24,7 @@ func main() {
 		name := ctx.Param("name")
 
 		req := &proto.Request{Name: string(name)}
-		if response, err := client.GetUserByName(ctx, req); err == nil {
+		if response, err := client.GetMockUserData(ctx, req); err == nil {
 			ctx.JSON(http.StatusOK, gin.H{
 				"Name":  fmt.Sprint(response.Name),
 				"Roll":  fmt.Sprint(response.Roll),
