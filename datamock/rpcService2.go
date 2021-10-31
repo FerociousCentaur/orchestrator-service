@@ -1,7 +1,7 @@
 package main
 
 import (
-	proto "RPC/proto"
+	proto "RPC/datamock"
 	"context"
 	"errors"
 	"net"
@@ -14,7 +14,7 @@ import (
 type server struct{}
 
 func main() {
-	listener, err := net.Listen("tcp", ":4040")
+	listener, err := net.Listen("tcp", ":10000")
 	if err != nil {
 		panic(err)
 	}
@@ -28,14 +28,13 @@ func main() {
 	}
 
 }
-func (s *server) GetUserByName(ctx context.Context, request *proto.Request) (*proto.Response, error) {
+func (s *server) GetMockUserData(ctx context.Context, request *proto.Request) (*proto.User, error) {
 	name := request.GetName()
 	if len(name) < 6 {
-		return nil, errors.New("Error! ! Name's length can not be less than 6 characters")
+		return nil, errors.New("Error!! Name cannot be less than 6 characters")
 	} else {
 		stlen := strconv.Itoa(len(name))
-		return &proto.Response{Name: name, Roll: int64(len(name) * 10), Class: stlen}, nil
+		return &proto.User{Name: name, Roll: int64(len(name) * 10), Class: stlen}, nil
 	}
 
-	//return nil, errors.New("not implemented yet. Vivek will implement me")
 }

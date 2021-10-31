@@ -7,12 +7,12 @@ message Request{
     string name =16;
 }
 
-message Response{
+message User{
     string name = 17;
     int64 roll = 18;
     string class = 19;
 }
 
 service UserService{
-rpc GetUserByName(Request) returns (Response);
+rpc GetMockUserData(Request) returns (User);
 }

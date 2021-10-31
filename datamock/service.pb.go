@@ -71,7 +71,7 @@ func (x *Request) GetName() string {
 	return ""
 }
 
-type Response struct {
+type User struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -81,8 +81,8 @@ type Response struct {
 	Class string `protobuf:"bytes,19,opt,name=class,proto3" json:"class,omitempty"`
 }
 
-func (x *Response) Reset() {
-	*x = Response{}
+func (x *User) Reset() {
+	*x = User{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_service_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -90,13 +90,13 @@ func (x *Response) Reset() {
 	}
 }
 
-func (x *Response) String() string {
+func (x *User) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*Response) ProtoMessage() {}
+func (*User) ProtoMessage() {}
 
-func (x *Response) ProtoReflect() protoreflect.Message {
+func (x *User) ProtoReflect() protoreflect.Message {
 	mi := &file_service_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -108,26 +108,26 @@ func (x *Response) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use Response.ProtoReflect.Descriptor instead.
-func (*Response) Descriptor() ([]byte, []int) {
+// Deprecated: Use User.ProtoReflect.Descriptor instead.
+func (*User) Descriptor() ([]byte, []int) {
 	return file_service_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *Response) GetName() string {
+func (x *User) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-func (x *Response) GetRoll() int64 {
+func (x *User) GetRoll() int64 {
 	if x != nil {
 		return x.Roll
 	}
 	return 0
 }
 
-func (x *Response) GetClass() string {
+func (x *User) GetClass() string {
 	if x != nil {
 		return x.Class
 	}
@@ -140,16 +140,16 @@ var file_service_proto_rawDesc = []byte{
 	0x0a, 0x0d, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12,
 	0x05, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x1d, 0x0a, 0x07, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
 	0x74, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x10, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x04, 0x6e, 0x61, 0x6d, 0x65, 0x22, 0x48, 0x0a, 0x08, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x11, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x72, 0x6f, 0x6c, 0x6c, 0x18, 0x12, 0x20,
-	0x01, 0x28, 0x03, 0x52, 0x04, 0x72, 0x6f, 0x6c, 0x6c, 0x12, 0x14, 0x0a, 0x05, 0x63, 0x6c, 0x61,
-	0x73, 0x73, 0x18, 0x13, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x63, 0x6c, 0x61, 0x73, 0x73, 0x32,
-	0x3f, 0x0a, 0x0b, 0x55, 0x73, 0x65, 0x72, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x30,
-	0x0a, 0x0d, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x42, 0x79, 0x4e, 0x61, 0x6d, 0x65, 0x12,
-	0x0e, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
-	0x0f, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
-	0x42, 0x04, 0x5a, 0x02, 0x2e, 0x2f, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x04, 0x6e, 0x61, 0x6d, 0x65, 0x22, 0x44, 0x0a, 0x04, 0x55, 0x73, 0x65, 0x72, 0x12, 0x12, 0x0a,
+	0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x11, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d,
+	0x65, 0x12, 0x12, 0x0a, 0x04, 0x72, 0x6f, 0x6c, 0x6c, 0x18, 0x12, 0x20, 0x01, 0x28, 0x03, 0x52,
+	0x04, 0x72, 0x6f, 0x6c, 0x6c, 0x12, 0x14, 0x0a, 0x05, 0x63, 0x6c, 0x61, 0x73, 0x73, 0x18, 0x13,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x63, 0x6c, 0x61, 0x73, 0x73, 0x32, 0x3d, 0x0a, 0x0b, 0x55,
+	0x73, 0x65, 0x72, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x2e, 0x0a, 0x0f, 0x47, 0x65,
+	0x74, 0x4d, 0x6f, 0x63, 0x6b, 0x55, 0x73, 0x65, 0x72, 0x44, 0x61, 0x74, 0x61, 0x12, 0x0e, 0x2e,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x0b, 0x2e,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x42, 0x04, 0x5a, 0x02, 0x2e, 0x2f,
+	0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -166,12 +166,12 @@ func file_service_proto_rawDescGZIP() []byte {
 
 var file_service_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_service_proto_goTypes = []interface{}{
-	(*Request)(nil),  // 0: proto.Request
-	(*Response)(nil), // 1: proto.Response
+	(*Request)(nil), // 0: proto.Request
+	(*User)(nil),    // 1: proto.User
 }
 var file_service_proto_depIdxs = []int32{
-	0, // 0: proto.UserService.GetUserByName:input_type -> proto.Request
-	1, // 1: proto.UserService.GetUserByName:output_type -> proto.Response
+	0, // 0: proto.UserService.GetMockUserData:input_type -> proto.Request
+	1, // 1: proto.UserService.GetMockUserData:output_type -> proto.User
 	1, // [1:2] is the sub-list for method output_type
 	0, // [0:1] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
@@ -198,7 +198,7 @@ func file_service_proto_init() {
 			}
 		}
 		file_service_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Response); i {
+			switch v := v.(*User); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -242,7 +242,7 @@ const _ = grpc.SupportPackageIsVersion6
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type UserServiceClient interface {
-	GetUserByName(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
+	GetMockUserData(ctx context.Context, in *Request, opts ...grpc.CallOption) (*User, error)
 }
 
 type userServiceClient struct {
@@ -253,9 +253,9 @@ func NewUserServiceClient(cc grpc.ClientConnInterface) UserServiceClient {
 	return &userServiceClient{cc}
 }
 
-func (c *userServiceClient) GetUserByName(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error) {
-	out := new(Response)
-	err := c.cc.Invoke(ctx, "/proto.UserService/GetUserByName", in, out, opts...)
+func (c *userServiceClient) GetMockUserData(ctx context.Context, in *Request, opts ...grpc.CallOption) (*User, error) {
+	out := new(User)
+	err := c.cc.Invoke(ctx, "/proto.UserService/GetMockUserData", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -264,35 +264,35 @@ func (c *userServiceClient) GetUserByName(ctx context.Context, in *Request, opts
 
 // UserServiceServer is the server API for UserService service.
 type UserServiceServer interface {
-	GetUserByName(context.Context, *Request) (*Response, error)
+	GetMockUserData(context.Context, *Request) (*User, error)
 }
 
 // UnimplementedUserServiceServer can be embedded to have forward compatible implementations.
 type UnimplementedUserServiceServer struct {
 }
 
-func (*UnimplementedUserServiceServer) GetUserByName(context.Context, *Request) (*Response, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetUserByName not implemented")
+func (*UnimplementedUserServiceServer) GetMockUserData(context.Context, *Request) (*User, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetMockUserData not implemented")
 }
 
 func RegisterUserServiceServer(s *grpc.Server, srv UserServiceServer) {
 	s.RegisterService(&_UserService_serviceDesc, srv)
 }
 
-func _UserService_GetUserByName_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserService_GetMockUserData_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(Request)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).GetUserByName(ctx, in)
+		return srv.(UserServiceServer).GetMockUserData(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/proto.UserService/GetUserByName",
+		FullMethod: "/proto.UserService/GetMockUserData",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).GetUserByName(ctx, req.(*Request))
+		return srv.(UserServiceServer).GetMockUserData(ctx, req.(*Request))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -302,8 +302,8 @@ var _UserService_serviceDesc = grpc.ServiceDesc{
 	HandlerType: (*UserServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "GetUserByName",
-			Handler:    _UserService_GetUserByName_Handler,
+			MethodName: "GetMockUserData",
+			Handler:    _UserService_GetMockUserData_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
