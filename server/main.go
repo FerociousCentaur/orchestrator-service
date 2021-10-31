@@ -13,7 +13,7 @@ import (
 type server struct{}
 
 func main() {
-	listener, err := net.Listen("tcp", ":4040")
+	listener, err := net.Listen("tcp", ":9000")
 	if err != nil {
 		panic(err)
 	}
