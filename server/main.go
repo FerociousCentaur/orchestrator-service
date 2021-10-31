@@ -5,6 +5,7 @@ import (
 	"context"
 	"errors"
 	"net"
+	"strconv"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
@@ -28,8 +29,13 @@ func main() {
 
 }
 func (s *server) GetUserByName(ctx context.Context, request *proto.Request) (*proto.Response, error) {
-	// name := request.GetName()
-	// stlen := strconv.Itoa(len(name))
-	// return &proto.Response{Name: name, Roll: int64(len(name) * 10), Class: stlen}, nil
-	return nil, errors.New("not implemented yet. Vivek will implement me")
+	name := request.GetName()
+	if len(name) < 6 {
+		return nil, errors.New("Error! ! Name's length can not be less than 6 characters")
+	} else {
+		stlen := strconv.Itoa(len(name))
+		return &proto.Response{Name: name, Roll: int64(len(name) * 10), Class: stlen}, nil
+	}
+
+	//return nil, errors.New("not implemented yet. Vivek will implement me")
 }
