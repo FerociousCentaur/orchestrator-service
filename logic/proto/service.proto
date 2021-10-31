@@ -16,3 +16,11 @@ message Response{
 service UserService{
 rpc GetUserByName(Request) returns (Response);
 }
+
+service OrchestratorsService{
+rpc GetUser(Request) returns (Response);
+}
+
+service MockUserService{
+rpc GetMockUserData(Request) returns (Response);
+}

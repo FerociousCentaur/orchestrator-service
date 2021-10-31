@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 
-	proto "RPC/proto"
+	proto "RPC/logic/proto"
 
 	"github.com/gin-gonic/gin"
 	"google.golang.org/grpc"
