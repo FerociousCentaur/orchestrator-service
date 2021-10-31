@@ -1,11 +1,12 @@
 package main
 
 import (
-	proto "RPC/datamock"
 	"context"
 	"errors"
 	"net"
 	"strconv"
+
+	proto "RPC/datamock/proto"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
