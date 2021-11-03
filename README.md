@@ -1,4 +1,9 @@
 # orchestrator-service
+<strong style="color:red">Notice:</strong>
+- Folder 'client','proto' and 'server' at the highest level is for part 2
+- Folder 'datamock' is for part 3
+- Folder 'logic' is for part 4
+- Each part is independent of each other
 
 <b>'Note'</b> Its better to clone the repo in a folder called RPC
 Operating System used = 'Windows'
